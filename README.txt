@@ -1,0 +1,50 @@
+﻿
+-- 템플릿 사용 안내사항 --
+
+1. jade, less 파일내에서 //- 이렇게 주석처리할 경우 html, css 에는 노출되지 않음.
+
+2. /images/common/blank_size_100.png (100px * 100px 기본 투명 이미지)
+   작은 사이즈가 필요할 경우 제작해서 쓸것 (네이밍은 유사하게 하기)
+
+3. /images/common/edit.gif
+   /images/common/end.gif
+   /images/common/ing.gif
+   /images/common/line.gif
+   코딩리스트에서 쓰이는 이미지.(기본으로 넣어둘것)
+
+4. run.bat
+   윈도우 파워쉘에서 grunt 실행되게 해줌.
+   바탕화면바로가기 해놓고 프로젝트별로 이름 변경해서 쓰면됨.
+   다른프로젝트 폴더에서 사용시 run.bat 파일만 복사해 가져가면됨.
+
+5. /dev/ 폴더에서
+   etribe_ux_*.less
+   etribe_ux_*.jade
+   위와 같이 etribe_ux_   라고 접두사가 붙으면 /www/ 폴더에 HTML 을 생성하지 않습니다.
+   etribe_ux_ 파일은 라이브러리나, 레이아웃등의 퍼블리싱만을 위한 파일로 생성합니다.
+
+   /www/ 폴더는 개발자나 다른 퍼블리셔와 공유해야 하기 때문에 순수 HTML 있어야 하고
+   jade 와 less 를 더 잘 활용하기 위해서 만든 룰입니다.
+
+6. 퍼블리싱 템플릿 생성시 몇가지 세팅이 필요합니다.
+   페이지 샘플인 index.jade 에서
+   extends 부분에 xhtml, html5, mobile 의 여부를 확인해서 파일 이름을 변경 해줍니다.
+
+   /inc/css/reset.less 에 들어가서는 mobile, web 의 여부를 확인해서 파일 이름을 변경 해줍니다.
+
+7. <body> 이하 layout 소스는 프로젝트 성격에 맞춰서 얼마든지 바꿀 수 있습니다.
+
+8. 실제 코딩하는 파일은 index.jade 입니다. 복사해서 사용하면 됩니다.
+
+9. print.less 는 프린트 할때만 적용됩니다. 
+
+10. font.less 는 웹폰트를 사용할 경우 링크 시키면 됩니다. 폰트종류는 프로젝트별로 선택.
+
+11. improveIR.js 는 고대비 IR기법 대응 스크립트 입니다.
+
+12. medernizr.js 는 기본적으로 링크 해놓았습니다. 필요없으면 제거하세요.
+
+13. common.js 에 header, footer 부분 jQuery Load 시켜져 있습니다.
+    개발과 협업시 Load 되는 부분 개발언어로 인클루드 하고 
+    개발쪽 common.js 에서는 load 되는 부분 삭제나 주석처리 해야 합니다.
+

@@ -1,0 +1,16 @@
+extends etribe_ux_layout_html5
+//- doctype 별로 extends 되는 파일 변경해주면 됨.
+//- etribe_ux_layout_xhtml1.0
+//- etribe_ux_layout_html5
+//- etribe_ux_layout_mobile
+
+block title
+	title 페이지마다 변경되는 타이틀을 넣어주세요.
+
+block contents
+	#container
+		.location
+			+lib_location("HOME","여기다","텍스트","넣으면","됩니다")
+		//- 로케이션 영역 없을 경우 삭제함. "" 안에 텍스트 들어가면 됨.
+
+		#content

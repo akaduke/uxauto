@@ -1,0 +1,46 @@
+doctype html
+
+include etribe_ux_lib
+
+html(lang='ko')
+	head
+		+viewport_mobile
+		meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+		meta(charset="utf-8")
+		meta(name="format-detection", content="telephone=no")
+		meta(name="keywords" content="")
+		meta(name="description" content="")
+		block title
+			title 페이지 타이틀을 넣어주세요
+
+		//- +css_link("/inc/css/font.css") 웹폰트 사용할 경우 link
+		+css_link("/inc/css/reset.css") //- reset.less 파일에서 모바일 or 웹에 따라서 reset.less import 종류 변경해야함.
+		+css_link("/inc/css/print.css") //- 프린트 관련 css
+		+css_link("/inc/css/common.css")
+		block css
+
+		+js_link("/inc/js/modernizr.js") //- jQuery v1.11.2
+		+js_link("/inc/js/jquery.js") //- Modernizr 2.8.3 (Custom Build) | MIT & BSD
+		+js_link("/inc/js/common.js")
+		block script
+
+	body
+		h1.hide_txt 웹사이트 이름을 써주세요.
+
+		h2.hide_txt 주요 메뉴 영역
+
+		#header
+			<!-- header include -->
+			//-include inc/layout/header
+			<!-- header include -->
+
+		h2.hide_txt 본문 영역
+
+		block contents
+
+		h2.hide_txt 하단 영역
+
+		#footer
+			<!-- footer include -->
+			//-include inc/layout/footer
+			<!-- footer include -->

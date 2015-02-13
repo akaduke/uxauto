@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/*! reset */
+html{
+	color:#000000;
+	font-size:100%;
+	background:#ffffff;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+code,form,fieldset,legend,input,textarea,p,blockquote,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,
+hgroup,menu,nav,section,summary,time,mark,audio,video{
+	margin:0;padding:0
+}
+
+body{
+	font-family:Dotum,"돋움",Gulim,"굴림",Helvetica Neue,Helvetica,Arial,Verdana,Tahoma,sans-serif;
+	font-size:14px; //- 모바일은 최소 14px 로 해야 디바이스 에서 12px 로 보입니다. 디자인이 14px 미만으로 나올 경우 반드시 얘기 하기
+	line-height:1.5; //- 폰트별로 (웹폰트포함) 값을 조정해서 쓰도록 합니다.
+	color:#000000;
+	background-color:#ffffff
+}
+img{
+	max-width:100%; //- 모바일에서 이미지의 유동적인 사이즈를 위해 필요함. (레이아웃의 크기에 따라 조정됨.)
+	vertical-align:middle;
+	border:0
+}
+button,input,select,textarea{
+	margin:0;
+	font-size:100%;
+	vertical-align:middle
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0
+}
+fieldset{
+	border:0
+}
+legend{
+	color:#000
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+	font-style:normal;
+	font-weight:normal
+}
+ol,ul{
+	list-style:none
+}
+caption,th{
+	text-align:left
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+	font-weight:normal;
+	line-height:1.2; //- h1, h2등의 경우 글자사이즈가 크기 때문에 행간을 1.2로 조정함.
+}
+caption,hr,legend{
+	width:0px;
+	height:0px;
+	font-size:1px;
+	text-indent:-9999em;
+	line-height:0
+}
+a,a:link,a:visited,a:active,a:hover,a:focus{
+	color:#000000;
+	font-size:100%;
+	text-decoration:none
+}
+
