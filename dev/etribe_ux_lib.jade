@@ -23,6 +23,19 @@ mixin css_link(href)
 mixin js_link(src)
 	script(src=src, type='text/javascript', charset='utf-8')
 
+//- IE 조건부 주석 처리
+mixin ie(condition)
+	| <!--[!{condition}]>
+	block
+	| <![endif]-->
+
+//- 아래는 jade 에서 사용 예제
+//- +ie('if IE 8')
+//- 	+css_link("/stylesheets/style-ie8-1.css")
+//- 	+css_link("/stylesheets/style-ie8-2.css")
+
+
+
 
 
 
