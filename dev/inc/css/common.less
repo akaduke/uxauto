@@ -10,6 +10,12 @@
 //- 예) .ie8 .location{border:1px solid red}
 //- 예) .ie9 .location{border:1px solid red}
 
+//- less 내의 이미지경로를 아래 currentUrl 로 jade 와 같이 공통 관리 합니다.
+//- 형식은 background:url("@{currentUrl}/images/common/bu_dot02.gif") no-repeat left center;
+//- 위와 같은 문법으로 사용합니다. 반드시 " " 로 url 을 묶어 줘야 합니다.
+//- " " 묶어도 css 로 변환 될때 " " 는 나타나지 않습니다.
+@currentUrl: "/";
+
 /*! common */
 .clfix{
 	*zoom:1;
@@ -73,6 +79,19 @@
 			font-weight:bold;font-size:12px;color:#ffffff;
 			text-align:center;
 		}
+	}
+}
+
+/*! dimm */
+.dimm{
+	display:none;
+	position:fixed;top:0;left:0;bottom:0;right:0;z-index:99;
+	background:#000000;
+	opacity:0.6;
+	width:100%;height:100%;
+	img{
+		display:block;
+		width:100%;height:100%;
 	}
 }
 

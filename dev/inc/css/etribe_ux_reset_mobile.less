@@ -17,9 +17,9 @@ hgroup,menu,nav,section,summary,time,mark,audio,video{
 }
 
 body{
-	font-family:Dotum,"돋움",Gulim,"굴림",Helvetica Neue,Helvetica,Arial,Verdana,Tahoma,sans-serif;
+	font-family:Dotum,"돋움",Gulim,"굴림","Helvetica Neue",Helvetica,Arial,Verdana,Tahoma,sans-serif;
 	font-size:14px; //- 모바일은 최소 14px 로 해야 디바이스 에서 12px 로 보입니다. 디자인이 14px 미만으로 나올 경우 반드시 얘기 하기
-	line-height:1.5; //- 폰트별로 (웹폰트포함) 값을 조정해서 쓰도록 합니다.
+	line-height:1; //- 위 아래 글자 사이를 최대한 없애는 범위.
 	color:#000000;
 	background-color:#ffffff
 }
@@ -56,7 +56,7 @@ caption,th{
 h1,h2,h3,h4,h5,h6{
 	font-size:100%;
 	font-weight:normal;
-	line-height:1.2; //- h1, h2등의 경우 글자사이즈가 크기 때문에 행간을 1.2로 조정함.
+	line-height:1; //- 위 아래 글자 사이를 최대한 없애는 범위.
 }
 caption,hr,legend{
 	width:0px;
@@ -71,3 +71,24 @@ a,a:link,a:visited,a:active,a:hover,a:focus{
 	text-decoration:none
 }
 
+
+
+
+//- 미디어쿼리 범위 샘플
+//- 미디어 쿼리가 필요할 경우 아래 소스를 가져가다 쓴다.
+//- 범위에 맞게 수정해서 사용해도 됨.
+// mobile portrait
+@media screen and (max-width:480px){
+}
+// mobile landscape
+@media screen and (min-width:481px) and (max-width:768px){
+}
+// tablet portrait
+@media screen and (min-width:769px) and (max-width:1024px){
+}
+// tablet landscape
+@media screen and (min-width:1025px) and (max-width:1280px){
+}
+// 1280 desktops
+@media screen and (min-width:1281px) and (max-width:1440px){
+}

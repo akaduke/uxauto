@@ -4,8 +4,14 @@ extends etribe_ux_layout_html5
 //- etribe_ux_layout_html5
 //- etribe_ux_layout_mobile
 
+//- layout 에서 선언한 공통적인 title 값이 맨뒤에 들어 감.
 block title
-	title 페이지마다 변경되는 타이틀을 넣어주세요.
+	title 페이지마다 변경되는 타이틀을 넣어주세요. - #{title}
+
+//- layout 에서 정의한 변수를 아래와 같이 페이지 별로 사용 가능.
+block vars
+	- var bodyClass = 'index_page_body'
+	- var wrapClass = 'index_page_wrap'
 
 block contents
 	#container
@@ -14,3 +20,4 @@ block contents
 		//- 로케이션 영역 없을 경우 삭제함. "" 안에 텍스트 들어가면 됨.
 
 		#content
+
