@@ -22,12 +22,13 @@ html(lang='ko')
 		+css_link("/inc/css/common.css")
 		block css
 
-		+js_link("/inc/js/modernizr.js") //- jQuery v1.11.2
-		+js_link("/inc/js/jquery.js") //- Modernizr 2.8.3 (Custom Build) | MIT & BSD
+		+js_link("/inc/js/modernizr.js") //- Modernizr 2.8.3 (Custom Build) | MIT & BSD
+		+js_link("/inc/js/jquery.js") //- jQuery v1.11.2
 		+js_link("/inc/js/common.js")
 		block script
 
 	//- body 등에 클래스 줘야 할때 사용함.
+	//- bodyClass 등의 변수는 아래 body 태그에서와 같이 사용함.
 	- var bodyClass = '';
 
 	//- currentUrl 은 공통적인 루트의 경로를 제어합니다.
@@ -39,7 +40,7 @@ html(lang='ko')
 
 	block vars
 
-	body
+	body(class='#{bodyClass}')
 		//- 딤드용 이미지
 		.dimm
 			img(src="#{currentUrl}images/common/blank_size_100.png", alt="")

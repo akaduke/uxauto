@@ -1,5 +1,7 @@
-document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>');
-// HTML 구축시만 필요 개발 진행시 이 부분은 삭제
+if(location.search.indexOf('livereload=true') != -1){
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>');
+	// HTML 구축시만 필요 개발 진행시 이 부분은 삭제
+}
 
 
 //jQuery.noConflict();
