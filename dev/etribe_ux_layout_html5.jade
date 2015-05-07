@@ -52,6 +52,9 @@ html(lang='ko')
 	block vars
 
 	body(class='#{bodyClass}')
+		//- 하위 브라우저 업그레이 권장하는 멘트. 현재는 ie7에 설정되어 있음. 필요 없을 경우 쓰지 않기.
+		//[if lte IE 7]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
 		//- 딤드용 이미지
 		.dimm
 			img(src="#{currentUrl}images/common/blank_size_100.png", alt="")
