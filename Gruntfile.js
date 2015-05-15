@@ -90,47 +90,8 @@ module.exports = function(grunt) {
 
 		},
 
-		// markdown: {
-		// 	all: {
-		// 		files: [{
-		// 			expand: true,
-		// 			cwd: "boilerplate/",
-		// 			src: ['**/*.md', '!**/etribe_ux_*.md'],
-		// 			dest: 'www_boilerplate/',
-		// 			ext: '.html'
-		// 		}]
-		// 		// ,
-		// 		// options: {
-		// 		// 	template: 'markdown_layout.html',
-		// 		// 	preCompile: function(src, context) {},
-		// 		// 	postCompile: function(src, context) {},
-		// 		// 	templateContext: {},
-		// 		// 	contextBinder: false,
-		// 		// 	contextBinderMark: '@@@',
-		// 		// 	autoTemplate: true,
-		// 		// 	autoTemplateFormat: 'html',
-		// 		// 	markdownOptions: {
-		// 		// 		gfm: true,
-		// 		// 		highlight: 'manual',
-		// 		// 		codeLines: {
-		// 		// 			before: '<span>',
-		// 		// 			after: '</span>'
-		// 		// 		}
-		// 		// 	}
-		// 		// }
-		// 	}
-		// },
-
-		md2html: {
-			multiple_files: {
-				options: {
-					layout: 'markdown_layout.html',
-					// basePath: '/',
-					markedOptions: {
-						gfm: false,
-						langPrefix: 'code-'
-					}
-				},
+		markdown: {
+			all: {
 				files: [{
 					expand: true,
 					cwd: "boilerplate/",
@@ -138,8 +99,47 @@ module.exports = function(grunt) {
 					dest: 'www_boilerplate/',
 					ext: '.html'
 				}]
+				// ,
+				// options: {
+				// 	template: 'markdown_layout.html',
+				// 	preCompile: function(src, context) {},
+				// 	postCompile: function(src, context) {},
+				// 	templateContext: {},
+				// 	contextBinder: false,
+				// 	contextBinderMark: '@@@',
+				// 	autoTemplate: true,
+				// 	autoTemplateFormat: 'html',
+				// 	markdownOptions: {
+				// 		gfm: true,
+				// 		highlight: 'manual',
+				// 		codeLines: {
+				// 			before: '<span>',
+				// 			after: '</span>'
+				// 		}
+				// 	}
+				// }
 			}
 		},
+
+		// md2html: {
+		// 	multiple_files: {
+		// 		options: {
+		// 			layout: 'etribe_ux_markdown_layout.jade',
+		// 			basePath: '/',
+		// 			markedOptions: {
+		// 				gfm: false,
+		// 				langPrefix: 'code-'
+		// 			}
+		// 		},
+		// 		files: [{
+		// 			expand: true,
+		// 			cwd: "boilerplate/",
+		// 			src: ['**/*.md', '!**/etribe_ux_*.md'],
+		// 			dest: 'www_boilerplate/',
+		// 			ext: '.html'
+		// 		}]
+		// 	}
+		// },
 
 		csscomb: {
 			options:{
@@ -290,9 +290,9 @@ module.exports = function(grunt) {
 				files: ['dev/**/*.less', 'boilerplate/**/*.less'],
 				tasks: ['newer:less:file', 'newer:less:guide', 'newer:csscomb:dynamic_mappings', 'newer:csscomb:guide', 'newer:cssmin:my_target', 'newer:cssmin:guide']
 			},
-			md2html: {
+			markdown: {
 				files: ['boilerplate/**/*.md'],
-				tasks: ['newer:md2html']
+				tasks: ['newer:markdown']
 			},
 			copy: {
 				files: ['dev/**/*', 'boilerplate/**/*'],
@@ -320,5 +320,5 @@ module.exports = function(grunt) {
 
 	require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
 
-	grunt.registerTask('default', ['clean', 'jade', 'prettify', 'less', 'csscomb', 'md2html', 'cssmin', 'imagemin', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'jade', 'prettify', 'less', 'csscomb', 'markdown', 'cssmin', 'imagemin', 'copy', 'connect', 'watch']);
 }
