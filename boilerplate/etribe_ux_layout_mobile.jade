@@ -1,0 +1,66 @@
+doctype html
+
+include etribe_ux_lib
+
+html(lang='ko')
+	head
+		block viewport
+			+viewport_mobile
+		meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+		meta(charset="utf-8")
+		meta(name="format-detection", content="telephone=no")
+		meta(name="keywords" content="")
+		meta(name="description" content="")
+
+		- var title = '고정 타이틀 값 넣기';
+		block title
+			title #{title}
+
+		//- +css_link("/inc/css/font.css") 웹폰트 사용할 경우 link
+		+css_link("/inc/css/reset.css") //- reset.less 파일에서 모바일 or 웹에 따라서 reset.less import 종류 변경해야함.
+		+css_link("/inc/css/print.css") //- 프린트 관련 css
+		+css_link("/inc/css/common.css")
+		block css
+
+		+js_link("/inc/js/modernizr.js") //- Modernizr 2.8.3 (Custom Build) | MIT & BSD
+		+js_link("/inc/js/jquery.js") //- jQuery v1.11.2
+		+js_link("/inc/js/common.js")
+		block script
+
+	//- body 등에 클래스 줘야 할때 사용함.
+	//- bodyClass 등의 변수는 아래 body 태그에서와 같이 사용함.
+	- var bodyClass = '';
+
+	//- currentUrl 은 공통적인 루트의 경로를 제어합니다.
+	//- 이미지 경로를 나타낼때 아래 dimm 과 같이 src 를 표시 해주어야 합니다.
+	//- 변경은 이곳에서 currentUrl 의 경로만 수정해주면 전체 적용 됩니다.
+	//- 단 이미지 링크 이외의 head 영역의 css, js 링크는 따로 수정해 주기 바랍니다.
+	//- less 파일은 파일내에 currenUrl 따로 선언되어 있습니다.
+	- var currentUrl = '/';
+
+	block vars
+
+	body(class='#{bodyClass}')
+		//- 딤드용 이미지
+		.dimm
+			img(src="#{currentUrl}images/common/blank_size_100.png", alt="")
+
+		h1.hide_txt 웹사이트 이름을 써주세요.
+
+		h2.hide_txt 주요 메뉴 영역
+
+		#header
+			<!-- header include -->
+			//-include inc/layout/header
+			<!-- header include -->
+
+		h2.hide_txt 본문 영역
+
+		block contents
+
+		h2.hide_txt 하단 영역
+
+		#footer
+			<!-- footer include -->
+			//-include inc/layout/footer
+			<!-- footer include -->

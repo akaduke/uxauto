@@ -26,5 +26,6 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+www_boilerplate/
 www/
 temp/

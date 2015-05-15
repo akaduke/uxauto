@@ -1,0 +1,82 @@
+doctype html
+
+include etribe_ux_lib
+
+//- 익스플로러 브라우저 핵 사용시, IE7 브라우저는 클래스 ie7 상속해서 사용.
+//- 익스플로러 브라우저 핵 사용시, IE8 브라우저는 클래스 ie8 상속해서 사용.
+//- 익스플로러 브라우저 핵 사용시, IE9 브라우저는 클래스 ie9 상속해서 사용.
+//- 예) .ie7 .location{border:1px solid red}
+
+//[if IE 7]><html lang="ko" class="ie7"><![endif]
+//[if IE 8]><html lang="ko" class="ie8"><![endif]
+//[if IE 9]><html lang="ko" class="ie9"><![endif]
+//[if gt IE 9]><!
+html(lang='ko')
+	//<![endif]
+	head
+		block viewport
+			+viewport_pc
+		meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+		meta(charset="utf-8")
+		meta(name="keywords" content="")
+		meta(name="description" content="")
+
+		- var title = 'Guide';
+		block title
+			title #{title}
+
+		//- +css_link("/inc/css/font.css") 웹폰트 사용할 경우 link
+		+css_link("/inc/css/reset.css") //- reset.less 파일에서 모바일 or 웹에 따라서 reset.less import 종류 변경해야함.
+		+css_link("/inc/css/print.css") //- 프린트 관련 css
+		+css_link("/inc/css/common.css")
+		block css
+
+		+js_link("/inc/js/modernizr.js") //- Modernizr 2.8.3 (Custom Build) | MIT & BSD
+		+js_link("/inc/js/jquery.js") //- jQuery v1.11.2
+		+js_link("/inc/js/improveIR.js") // IE 브라우저 IR기법 고대비 대응을 위한 스크립트 (문제가 있을 수 있음 문제 발생시 제거하기)
+		+js_link("/inc/js/common.js")
+		block script
+
+	//- body, wrap 등에 클래스 줘야 할때 사용함.
+	//- bodyClass 등의 변수는 아래 body 태그에서와 같이 사용함.
+	- var bodyClass = '';
+	- var wrapClass = '';
+
+	//- currentUrl 은 공통적인 루트의 경로를 제어합니다.
+	//- 이미지 경로를 나타낼때 아래 dimm 과 같이 src 를 표시 해주어야 합니다.
+	//- 변경은 이곳에서 currentUrl 의 경로만 수정해주면 전체 적용 됩니다.
+	//- 단 이미지 링크 이외의 head 영역의 css, js 링크는 따로 수정해 주기 바랍니다.
+	//- less 파일은 파일내에 currenUrl 따로 선언되어 있습니다.
+	- var currentUrl = '/';
+
+	block vars
+
+	body(class='#{bodyClass}')
+		//- 하위 브라우저 업그레이 권장하는 멘트. 현재는 ie7에 설정되어 있음. 필요 없을 경우 쓰지 않기.
+		//[if lte IE 7]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
+		//- 딤드용 이미지
+		.dimm
+			img(src="#{currentUrl}images/common/blank_size_100.png", alt="")
+
+		//- h1.hide_txt HTML, CSS Guide
+		#wrap(class='#{wrapClass}')
+			//- h2.hide_txt 주요 메뉴 영역
+
+			#header
+				<!-- header include -->
+				//-include inc/layout/header
+				<!-- header include -->
+
+			//- h2.hide_txt 본문 영역
+
+			//- h2.hide_txt 현재 문서 위치
+			//- //- 로케이션 영역이 있을 경우 적용 없을경우 "현재 문서 위치" 삭제
+			block contents
+
+			//- h2.hide_txt 하단 영역
+
+			#footer
+				<!-- footer include -->
+				//-include inc/layout/footer
+				<!-- footer include -->

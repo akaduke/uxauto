@@ -1,5 +1,5 @@
 if(location.search.indexOf('ll=true') != -1){
-	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':10100/livereload.js"></' + 'script>');
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':11111/livereload.js"></' + 'script>');
 	// HTML 구축시만 필요 개발 진행시 이 부분은 삭제
 }
 
@@ -125,8 +125,8 @@ if(location.search.indexOf('ll=true') != -1){
 	$(function(){
 		textPlaceHolderInit(); // ie7,8 가능한 placeholder
 
-		header.init(); // 개발언어로 변경시 이 부분 삭제 해야 합니다. (개발언어로 인클루드 필요.)
-		footer.init(); // 개발언어로 변경시 이 부분 삭제 해야 합니다. (개발언어로 인클루드 필요.)
+		// header.init(); // 개발언어로 변경시 이 부분 삭제 해야 합니다. (개발언어로 인클루드 필요.)
+		// footer.init(); // 개발언어로 변경시 이 부분 삭제 해야 합니다. (개발언어로 인클루드 필요.)
 	});
 
 

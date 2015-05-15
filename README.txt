@@ -1,7 +1,9 @@
 ﻿
 -- 템플릿 사용 안내사항 --
 
-00. livereload 를 사용 하기 위해선 URL 뒤에 ?livereload=true 이라는 값을 넣어 줘야 작동합니다.
+00. 프로젝트는 http://localhost:10001/codinglist.html
+00. 가이드 문서는 http://localhost:10000/codinglist.html
+00. livereload 를 사용 하기 위해선 URL 뒤에 ?ll=true 이라는 값을 넣어 줘야 작동합니다.
 
 01. jade, less 파일내에서 //- 이렇게 주석처리할 경우 html, css 에는 노출되지 않음.
 
@@ -65,4 +67,10 @@
 
 16. 공백 Tab Size 는 2를 기준으로 합니다. (서브라임텍스트3 우측 하단 "Tab Size: 2" )
 	http://code-guide.aliencube.org/#html-practicality (여기 참고함)
+
+17. 프로젝트 포트번호 10001 부터 시작. 10002, 10003, 10004와 같이  1씩 증가.
+18. livereload 포트 번호는 10100 부터 시작 10200, 10300, 10400와 같이 1씩 증가. 프로젝트와 livereload 번호 맞춤.
+19. 가이드문서 포트번호 10000(고정)
+20. Grunt 동시에 여러개 작동 해야 할 경우 liverload 포트번호가 같으면 오류남. 위와 같이 포트번호 다르게 지정해야함.
+
 
