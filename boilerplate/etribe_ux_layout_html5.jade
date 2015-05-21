@@ -21,7 +21,7 @@ html(lang='ko')
 		meta(name="keywords" content="")
 		meta(name="description" content="")
 
-		- var title = 'Guide';
+		- var title = '고정 타이틀 값 넣기';
 		block title
 			title #{title}
 
@@ -59,22 +59,22 @@ html(lang='ko')
 		.dimm
 			img(src="#{currentUrl}images/common/blank_size_100.png", alt="")
 
-		//- h1.hide_txt HTML, CSS Guide
+		h1.hide_txt 웹사이트 이름을 써주세요.
 		#wrap(class='#{wrapClass}')
-			//- h2.hide_txt 주요 메뉴 영역
+			h2.hide_txt 주요 메뉴 영역
 
 			#header
 				<!-- header include -->
 				//-include inc/layout/header
 				<!-- header include -->
 
-			//- h2.hide_txt 본문 영역
+			h2.hide_txt 본문 영역
 
-			//- h2.hide_txt 현재 문서 위치
-			//- //- 로케이션 영역이 있을 경우 적용 없을경우 "현재 문서 위치" 삭제
+			h2.hide_txt 현재 문서 위치
+			//- 로케이션 영역이 있을 경우 적용 없을경우 "현재 문서 위치" 삭제
 			block contents
 
-			//- h2.hide_txt 하단 영역
+			h2.hide_txt 하단 영역
 
 			#footer
 				<!-- footer include -->
