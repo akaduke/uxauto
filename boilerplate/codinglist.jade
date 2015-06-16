@@ -138,6 +138,7 @@ block contents
 		.gnb.clfix
 			a.first_child(href='#') Guide
 			a(href='#') PROTOTYPE
+			a(href='#') OUTPUT
 		.notice_menu
 			p 확인 하실 메뉴를 클릭해 주세요!
 
@@ -255,7 +256,75 @@ block contents
 						td 작업자
 						td /
 						td.edit
-							a(href='.html') 파일이름
+							a(href='.html', target="_blank") 파일이름
+						td
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		#effect2.effect
+			h2 Output
+			table#table2.coding_list
+				colgroup
+					col(width='10%')
+					col(width='10%')
+					col(width='10%')
+					col(width='10%')
+					col(width='12%')
+					col(width='5%')
+					col(width='13%')
+					col(width='15%')
+					col(width='*')
+				thead
+					tr
+						th 1deth
+						th 2depth
+						th 3depth
+						th 4depth
+						th 비고
+						th 작업자
+						th folder
+						th filename
+						th issue
+				tbody
+					tr
+						td Output
+						td  
+						td  
+						td  
+						td
+						td 작업자
+						td /
+						td.edit
+							a(href='#{currentUrl}output/output.html', target="_blank") output.html
 						td
 
 
