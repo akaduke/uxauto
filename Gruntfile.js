@@ -288,7 +288,7 @@ module.exports = function(grunt) {
 			},
 			less: {
 				files: ['dev/**/*.less', 'boilerplate/**/*.less'],
-				tasks: ['newer:less:file', 'newer:less:guide', 'newer:csscomb:dynamic_mappings', 'newer:csscomb:guide', 'newer:cssmin:my_target', 'newer:cssmin:guide']
+				tasks: ['newer:less:files', 'newer:less:guide', 'newer:csscomb:dynamic_mappings', 'newer:csscomb:guide', 'newer:cssmin:my_target', 'newer:cssmin:guide']
 			},
 			markdown: {
 				files: ['boilerplate/**/*.md'],
